@@ -1,0 +1,11 @@
+<div class="card-header" *ngIf="title">
+    {{title}}
+</div>
+
+<div class="card-body">
+    <ng-content></ng-content>
+</div>
+
+<div class="card-footer" *ngIf="_footer">
+    <ng-content select="footer"></ng-content>
+</div>

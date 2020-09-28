@@ -1,0 +1,11 @@
+import { Directive } from '@angular/core';
+
+@Directive({
+  // tslint:disable-next-line: directive-selector
+  selector: 'popupFooter',
+  exportAs: 'popupFooter'
+})
+
+export class PopupFooterDirective {
+  constructor() { }
+}

@@ -1,0 +1,25 @@
+<div class="modal show fade" tabindex="-1" role="dialog" style="display: block;" *ngIf="show" (click)="backdrop()">   
+    <div class="modal-dialog" 
+    [class.modal-lg]="size === 'large'"
+    [class.modal-md]="size === 'medium'"
+    [class.modal-sm]="size === 'small'"    
+    role="document"
+    [class.modal-dialog-centered]="displayInCenter">
+        <div class="modal-content" (click)="stopPropag($event)">
+            <div class="modal-header">
+                <label class="modal-title" *ngIf="title">{{title}}</label>
+                <button *ngIf="showCloseButton" type="button" class="close" aria-label="Close"
+                    (click)="closeClick.emit()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ng-content></ng-content>
+            </div>
+            <div class="modal-footer" *ngIf="_popupFooter">
+                <ng-content select="popupFooter"></ng-content>
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="modal-backdrop fade show" *ngIf="show"></div>
